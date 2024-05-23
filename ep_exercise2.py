@@ -15,5 +15,8 @@ def vowels(text: str) -> int:
 text = "Hallo"
 print("Anzahl der Vokale:", vowels(text))
 
+<<<<<<< HEAD
 if __name__ == '__ep_exercise2__':
+=======
+>>>>>>> 3a22ed16893b6290a87f77023deb50062cc53b1e
     pytest.ep_exercise2()
