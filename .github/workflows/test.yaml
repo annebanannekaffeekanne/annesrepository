@@ -21,7 +21,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Analysing the code with pylint
       run: |
-        pylint ep_exercise2 --disable=C0111 || pylint-exit $?
+        pylint ep_exercise2.py --disable=C0111 || pylint-exit $?
     - name: Test the code with pytest
       run: |
-        pytest --cov=ep_exercise2 --cov-fail-under=90 --cov-branch 
+        pytest --cov=ep_exercise2.py --cov-fail-under=90 --cov-branch 
