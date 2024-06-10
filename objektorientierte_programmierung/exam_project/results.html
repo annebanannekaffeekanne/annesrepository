@@ -8,15 +8,16 @@
 </head>
 <body>
     <h1>Results</h1>
-    <p>Here you find the visualization of the analyzed data. See the frequency of the Diagnoses.</p>
-    <p>you also find the error-function of used algorithm 'gradient descent' and heatmaps of the normalized data.</p>
-    <h2>Frequency of Classes</h2>
-    <img src="{{ url_for('static', filename='pie_chart.png') }}" alt="Pie Chart">
+    <p>After using the algorithm 'gradient descent' we get a prediction for the classes in a testing dataset. First of all
+    a better understanding for this algorithm is needed.</p>
+    <p>Gradient Descent is an optimization algorithm for finding a local minimum of a differentiable function.
+        Gradient descent in machine learning is simply used to find the values of a function's parameters (coefficients)
+        that minimize a cost function as far as possible. This so called cost function is in our example the error function.
+    which needs to be minimized. After running the algorithm, we can visualize the development of this function.</p>
     <h2>Error Development</h2>
     <img src="{{ url_for('static', filename='error_plot.png') }}" alt="Error Plot">
-    <h2>Heatmaps</h2>
-    <img src="{{ url_for('static', filename='heatmap_valid.png') }}" alt="Validation Heatmap">
-    <img src="{{ url_for('static', filename='heatmap_train.png') }}" alt="Training Heatmap">
+    <p>what we can see is, that the function shrinks over the iterations of the algorithm, which shows that it's working
+    properly.</p>
+
 </body>
 </html>
-
