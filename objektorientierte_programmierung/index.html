@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <form action="{{ url_for('edit', todo_id=todo['ID']) }}" method="post" style="display:inline;">
+                    <input type="checkbox" name="completed" {% if todo['Completed'] %}checked{% endif %} onChange="this.form.submit()">
+                    <input type="text" name="name" value="{{ todo['Name'] }}">
+                    <button type="submit">Edit</button>
+                </form>
+                <form action="{{ url_for('delete', todo_id=todo['ID']) }}" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <form action="{{ url_for('add') }}" method="post">
+        <input type="text" name="name" placeholder="New Todo">
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
